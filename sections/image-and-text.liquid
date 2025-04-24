@@ -1,0 +1,103 @@
+{{ 'section-image-and-text.css' | asset_url |  stylesheet_tag  }}
+
+<style>
+    @media screen and (min-width: 990px ){
+        #hero-{{ section.id }}{
+            height: {{ section.settings.image_height }}vh;
+            width: {{ section.settings.image_width }}vw;
+        }
+    }
+</style>
+
+<section id="image-and-text-{{ section.id }}">
+    <div>
+        {% if section.settings.bg_image != blank %}
+            <div>
+                {{ section.settings.bg_image | image_url: width: 3000 | image_tag: loading: 'lazy', sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000', alt: section.settings.bg_image.alt, class: 'image' }}
+            </div>
+        {% endif %}
+        <div>
+            {% if section.settings.title != blank %}
+                <h2>{{ section.settings.title }}</h2>
+            {% endif %}
+            {% if section.settings.description != blank %}
+                <div>
+                    {{ section.settings.description }}
+                </div>
+            {% endif %}
+            {% if section.settings.button_link != blank and section.settings.button_style != blank %}
+                <a href="{{ section.settings.button_link }}" class="btn {{ section.settings.button_style }}">
+                    {{ section.settings.button_text }}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Image and Text",
+        "class": "image-and-text",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Media"
+            },
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "range",
+                "id": "image_height",
+                "label": "Image height",
+                "default": 50,
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "unit": "vh"
+            },
+            {
+                "type": "range",
+                "id": "image_width",
+                "label": "Image Height",
+                "default": 50,
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "unit": "vw",
+                "info": "This setting is only available for desktop view"
+            },
+            {
+                "type": "header",
+                "content": "Content"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description"
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Button Text"
+            },
+            {
+                "type": "url",
+                "id": "button_link",
+                "label": "Button Link"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Image and Text"
+            }
+        ]
+    }
+{% endschema %}
