@@ -1,15 +1,55 @@
 {{ 'section-hero.css' | asset_url |  stylesheet_tag  }}
 
 <style>
-    #hero-{{ section.id }}{
-        height: {{ section.settings.hero_height }}vh;
-    }
+    {% if section.settings.bg_image_mobile != blank %}
+        #hero-{{ section.id }} .hero-image-mobile-container{
+            height: {{ section.settings.hero_height_mobile }}dvh;
+        }
+        .hero .hero-image-desktop-container{
+            display: none;    
+        }
+        .hero .hero-image-mobile-container{
+            display: block;    
+        }
+        @media (min-width: 750px){
+            #hero-{{ section.id }}{
+                height: {{ section.settings.hero_height_desktop }}vh;
+            }
+            .hero .hero-image-desktop-container{
+                display: block;    
+            }
+            .hero .hero-image-mobile-container{
+                display: none;    
+            }
+        }
+    {% else %}
+        #hero-{{ section.id }} .hero-image-desktop-container{
+            height: {{ section.settings.hero_height_mobile }}dvh;
+        }
+        @media (min-width: 750px){
+            #hero-{{ section.id }} .hero-image-desktop-container{
+                height: auto;
+            }
+            #hero-{{ section.id }}{
+                height: {{ section.settings.hero_height_desktop }}vh;
+            }
+        }
+    {% endif %}
 </style>
 
 <section id="hero-{{ section.id }}">
-    {{ section.settings.bg_image | image_url: width: 3000 | image_tag: loading: 'lazy', sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000', alt: section.settings.bg_image.alt, class: 'hero-image' }}
-    <div class="page-width center">
-        <div class="hero-content">
+    {% if section.settings.bg_image_desktop != blank %}
+        <div class="hero-image-desktop-container">
+            {{ section.settings.bg_image_desktop | image_url: width: 3000 | image_tag: loading: 'lazy', sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000', alt: section.settings.bg_image.alt, class: 'hero-image hero-image-desktop' }}
+        </div>
+    {% endif %}
+    {% if section.settings.bg_image_mobile != blank %}
+        <div class="hero-image-mobile-container">
+            {{ section.settings.bg_image_mobile | image_url: width: 3000 | image_tag: loading: 'lazy', sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000', alt: section.settings.bg_image.alt, class: 'hero-image hero-image-mobile' }}
+        </div>
+    {% endif %}
+    <div class="page-width">
+        <div class="hero-content center">
             <div>
                 {% if section.settings.subtitle != blank %}
                     <h2>{{ section.settings.subtitle }}</h2>
@@ -21,7 +61,7 @@
             <div class="button-group">
                 {% for block in section.blocks %}
                     {% if block.settings.button_link != blank and block.settings.button_style != blank %}
-                        <a href="{{ block.settings.button_link }}" class="btn {{ block.settings.button_style }}">
+                        <a href="{{ block.settings.button_link }}" class="button button--{{ block.settings.button_style }}">
                             {{ block.settings.button_text }}
                         </a>
                     {% endif %}
@@ -42,13 +82,28 @@
             },
             {
                 "type": "image_picker",
-                "id": "bg_image",
-                "label": "Background Image"
+                "id": "bg_image_desktop",
+                "label": "Desktop - Background Image"
             },
             {
                 "type": "range",
-                "id": "hero_height",
-                "label": "Hero Height",
+                "id": "hero_height_desktop",
+                "label": "Desktop - Hero Height",
+                "default": 50,
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "unit": "vh"
+            },
+            {
+                "type": "image_picker",
+                "id": "bg_image_mobile",
+                "label": "Mobile - Background Image"
+            },
+            {
+                "type": "range",
+                "id": "hero_height_mobile",
+                "label": "Mobile - Hero Height",
                 "default": 50,
                 "min": 0,
                 "max": 100,

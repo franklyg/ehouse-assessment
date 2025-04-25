@@ -1,0 +1,38 @@
+{% if block.settings.collections.size > 1 %}
+    <style>
+        .collection-link{
+            border-right: 1px solid #000;
+            margin-right: 10px;
+            padding-right: 10px;
+        }
+        .collection-link:last-child{
+            border: none;
+            margin-right: 0;
+            padding-right: 0;
+        }
+    </style>
+{% endif %}
+
+<div>
+    {% for collection in block.settings.collections %}
+        <a href="{{ collection.url }}" class="collection-link">
+            {{ collection.title }}
+        </a>
+    {% endfor %}
+</div>
+
+{% schema %}
+    {
+        "name": "Collection List",
+        "settings": [
+            {
+                "type": "collection_list",
+                "id": "collections",
+                "limit": 4,
+                "label": "Collections",
+                "info": "If more than one collection is required."
+            }
+        ],
+        "presets": [{"name": "Collection List"}]
+    }
+{% endschema %}

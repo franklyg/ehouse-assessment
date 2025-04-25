@@ -1,9 +1,13 @@
 {{ 'section-image-and-text.css' | asset_url |  stylesheet_tag  }}
 
 <style>
-    @media screen and (min-width: 990px ){
-        #hero-{{ section.id }}{
-            height: {{ section.settings.image_height }}vh;
+    #image-and-text-{{ section.id }} .image-and-text--image{
+        height: {{ section.settings.image_height_mobile }}vh;
+        width: 100%;
+    }
+    @media screen and (min-width: 750px ){
+        #image-and-text-{{ section.id }} .image-and-text--image{
+            height: {{ section.settings.image_height_desktop }}vh;
             width: {{ section.settings.image_width }}vw;
         }
     }
@@ -12,24 +16,26 @@
 <section id="image-and-text-{{ section.id }}">
     <div>
         {% if section.settings.bg_image != blank %}
-            <div>
+            <div class="image-and-text--image">
                 {{ section.settings.bg_image | image_url: width: 3000 | image_tag: loading: 'lazy', sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000', alt: section.settings.bg_image.alt, class: 'image' }}
             </div>
         {% endif %}
-        <div>
-            {% if section.settings.title != blank %}
-                <h2>{{ section.settings.title }}</h2>
-            {% endif %}
-            {% if section.settings.description != blank %}
-                <div>
-                    {{ section.settings.description }}
-                </div>
-            {% endif %}
-            {% if section.settings.button_link != blank and section.settings.button_style != blank %}
-                <a href="{{ section.settings.button_link }}" class="btn {{ section.settings.button_style }}">
-                    {{ section.settings.button_text }}
-                </a>
-            {% endif %}
+        <div class="image-and-text--content">
+            <div class="image-and-text--content-inner">
+                {% if section.settings.title != blank %}
+                    <h2>{{ section.settings.title }}</h2>
+                {% endif %}
+                {% if section.settings.description != blank %}
+                    <div>
+                        {{ section.settings.description }}
+                    </div>
+                {% endif %}
+                {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+                    <a href="{{ section.settings.button_link }}" class="button button--{{ section.settings.button_style }}">
+                        {{ section.settings.button_text }}
+                    </a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </section>
@@ -50,8 +56,18 @@
             },
             {
                 "type": "range",
-                "id": "image_height",
-                "label": "Image height",
+                "id": "image_height_desktop",
+                "label": "Desktop - Image height",
+                "default": 50,
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "unit": "vh"
+            },
+            {
+                "type": "range",
+                "id": "image_height_mobile",
+                "label": "Mobile - Image height",
                 "default": 50,
                 "min": 0,
                 "max": 100,
@@ -61,7 +77,7 @@
             {
                 "type": "range",
                 "id": "image_width",
-                "label": "Image Height",
+                "label": "Image Width",
                 "default": 50,
                 "min": 0,
                 "max": 100,
@@ -92,6 +108,21 @@
                 "type": "url",
                 "id": "button_link",
                 "label": "Button Link"
+            },
+            {
+                "type": "select",
+                "id": "button_style",
+                "label": "Button Style",
+                "options": [
+                    {
+                        "value": "primary",
+                        "label": "Primary"
+                    },
+                    {
+                        "value": "secondary",
+                        "label": "Secondary"
+                    }
+                ]
             }
         ],
         "presets": [

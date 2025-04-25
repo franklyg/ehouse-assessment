@@ -1,0 +1,25 @@
+
+
+{% if block.settings.image != blank %}
+    {{ block.settings.image | image_url: width: 3000 | image_tag: loading: 'lazy', sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000', alt: block.settings.image.alt, class: 'image' }}
+{% endif %}
+<div class="column--content center">
+    {% content_for 'blocks' %}
+</div>
+
+
+{% schema %}
+    {
+        "name": "Column",
+        "class": "column",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            }
+        ],
+        "blocks": [{"type": "_title"},{"type": "_description"},{"type": "_text-button"},{"type": "_collection-list"}],
+        "presets": [{"name": "Column"}]
+    }
+{% endschema %}

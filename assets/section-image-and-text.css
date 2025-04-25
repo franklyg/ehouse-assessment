@@ -1,0 +1,65 @@
+.image-and-text{
+    position: relative;
+}
+.image-and-text .image-and-text--container{
+    
+}
+.image-and-text .image-and-text--image{
+    position: relative;
+    aspect-ratio: 1;
+}
+.image-and-text .image-and-text--image .image{
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;    
+}
+.image-and-text  .image-and-text--content{
+    max-width: 650px;
+    height: max-content;
+    background: white;
+    border: 25px solid white;
+    inset: 0 auto 0 5rem;
+    margin: auto;
+}
+.image-and-text .image-and-text--content h2{
+    font-size: 42px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+.image-and-text .image-and-text--content p{
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+.image-and-text .image-and-text--content a{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.image-and-text  .image-and-text--content .image-and-text--content-inner{
+    border: 2px solid #ECECEC;
+    padding: 25px 20px 35px;
+}
+
+@media (min-width: 750px){
+    .image-and-text .image-and-text--image{
+        display: flex;
+        justify-self: end;
+        margin-right: -5rem;
+    }
+    .image-and-text .image-and-text--image .image{
+        position: absolute;
+    }
+    .image-and-text  .image-and-text--content{
+        position: absolute;
+        border: 30px solid white;
+    }
+    .image-and-text  .image-and-text--content .image-and-text--content-inner{
+        padding: 67px 82px;
+    }
+}

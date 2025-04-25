@@ -1,0 +1,24 @@
+{% if block.settings.button_text != blank and block.settings.button_link %}
+    <a href="{{ block.settings.button_link }}">
+        {{ block.settings.button_text }}
+    </a>
+{% endif %}
+
+{% schema %}
+    {
+        "name": "Text Button",
+        "settings": [
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Button Text"
+            },
+            {
+                "type": "url",
+                "id": "button_link",
+                "label": "Button Link"
+            },
+        ],
+        "presets": [{"name": "Text Button"}]
+    }
+{% endschema %}

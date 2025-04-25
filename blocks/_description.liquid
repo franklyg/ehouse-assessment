@@ -1,0 +1,17 @@
+<div>
+    <p>{{ block.settings.description }}</p>
+</div>
+
+{% schema %}
+    {
+        "name": "Description",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description"
+            }
+        ],
+        "presets": [{"name": "Description"}]
+    }
+{% endschema %}
