@@ -15,7 +15,7 @@
         "button_HMhfib": {
           "type": "button",
           "settings": {
-            "button_text": "Women",
+            "button_text": "WOMEN",
             "button_link": "shopify://collections/women",
             "button_style": "primary"
           }
@@ -23,7 +23,7 @@
         "button_YekQxa": {
           "type": "button",
           "settings": {
-            "button_text": "Men",
+            "button_text": "MEN",
             "button_link": "shopify://collections/men",
             "button_style": "primary"
           }
@@ -31,7 +31,7 @@
         "button_8z8AT9": {
           "type": "button",
           "settings": {
-            "button_text": "Kids",
+            "button_text": "KIDS",
             "button_link": "shopify://collections/kids",
             "button_style": "primary"
           }
@@ -39,7 +39,7 @@
         "button_kBHkfj": {
           "type": "button",
           "settings": {
-            "button_text": "Home",
+            "button_text": "HOME",
             "button_link": "shopify://collections/home",
             "button_style": "primary"
           }
