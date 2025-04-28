@@ -1,9 +1,10 @@
 .image-and-text{
     position: relative;
+    margin-bottom: -30px;
 }
-.image-and-text .image-and-text--container{
+/* .image-and-text .image-and-text--container{
     
-}
+} */
 .image-and-text .image-and-text--image{
     position: relative;
     aspect-ratio: 1;
@@ -15,31 +16,35 @@
     object-fit: cover;
     object-position: center;    
 }
-.image-and-text  .image-and-text--content{
-    max-width: 650px;
+.image-and-text .image-and-text--content{
+    max-width: calc(100% - 20px);
     height: max-content;
     background: white;
     border: 25px solid white;
-    inset: 0 auto 0 5rem;
-    margin: auto;
+    margin-top: -60px;
+    position: relative;
 }
 .image-and-text .image-and-text--content h2{
-    font-size: 42px;
+    font-weight: 700;
+    font-size: 28px;
     line-height: 100%;
     letter-spacing: 0px;
+    margin-bottom: 15px;
 }
 .image-and-text .image-and-text--content p{
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 1px;
-    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.88px;
+    margin-bottom: 28px;
 }
 .image-and-text .image-and-text--content a{
     font-weight: 700;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 28px;
     letter-spacing: 2px;
     text-align: center;
+    width: 100%;
 }
 .image-and-text  .image-and-text--content .image-and-text--content-inner{
     border: 2px solid #ECECEC;
@@ -47,17 +52,37 @@
 }
 
 @media (min-width: 750px){
+    .image-and-text{
+        margin-bottom: 0;
+    }
     .image-and-text .image-and-text--image{
         display: flex;
         justify-self: end;
-        margin-right: -5rem;
     }
     .image-and-text .image-and-text--image .image{
         position: absolute;
     }
     .image-and-text  .image-and-text--content{
+        max-width: 650px;
         position: absolute;
         border: 30px solid white;
+        margin: auto;
+        inset: 0 auto 0 5rem;
+    }
+    .image-and-text .image-and-text--content h2{
+        font-size: 42px;
+        margin-bottom: 24px;
+    }
+    .image-and-text .image-and-text--content p{
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 1px;
+        margin-bottom: 31px;
+    }
+    .image-and-text .image-and-text--content a{
+        font-size: 14px;
+        line-height: 28px;
+        width: max-content;
     }
     .image-and-text  .image-and-text--content .image-and-text--content-inner{
         padding: 67px 82px;

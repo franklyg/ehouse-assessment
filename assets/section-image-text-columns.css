@@ -8,22 +8,26 @@
 }
 .image-and-text-columns .columns .column h3{
     font-weight: 500;
-    font-size: 28px;
+    font-size: 20px;
     line-height: 100%;
-    letter-spacing: 3px;
+    letter-spacing: 2.14px;
     text-align: center;
+    margin-bottom: 15px;  
+    margin-top: 0; 
 }
 .image-and-text-columns .columns .column p{
     font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.88px;
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 9px;
 }
 .image-and-text-columns .columns .column a{
     font-weight: 700;
     font-size: 14px;
-    line-height: 28px;
+    line-height: 40px;
     letter-spacing: 2px;
     text-align: center;
     text-decoration: underline;
@@ -31,7 +35,6 @@
     text-decoration-offset: 0%;
     text-decoration-thickness: 0%;
     color: #000;
-
 }
 .image-and-text-columns .columns .column .image{
     width: 100%;
@@ -45,9 +48,17 @@
     position: relative;
     bottom: 0;
     background: white;
-    padding: 30px 0 51px;
+    padding: 28px 0 51px;
+}
+@media (max-width: 750px){
+    .image-and-text-columns .page-width{
+        padding: 0;
+    }  
 }
 @media (min-width: 750px){
+    .image-and-text-columns .columns .column .column--content{
+        padding: 46px 0 51px;
+    }
     .image-and-text-columns .columns{
         flex-direction: row;
         gap: 36px;
@@ -58,6 +69,23 @@
         padding: 30px;
         display: flex;
         align-items: end;
+    }
+    .image-and-text-columns .columns .column h3{
+        font-size: 28px;
+        line-height: 100%;
+        letter-spacing: 3px;
+        margin-bottom: 23px;
+    }
+    .image-and-text-columns .columns .column p{
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 1px;
+        margin-bottom: 18px;
+    }
+    .image-and-text-columns .columns .column a{
+        font-size: 14px;
+        line-height: 28px;
+        letter-spacing: 2px;
     }
     .image-and-text-columns .columns .column .image{
         position: absolute;

@@ -37,7 +37,7 @@
     {% endif %}
 </style>
 
-<section id="hero-{{ section.id }}">
+<section id="hero-{{ section.id }}" class="section">
     {% if section.settings.bg_image_desktop != blank %}
         <div class="hero-image-desktop-container">
             {{ section.settings.bg_image_desktop | image_url: width: 3000 | image_tag: loading: 'lazy', sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000', alt: section.settings.bg_image.alt, class: 'hero-image hero-image-desktop' }}

@@ -3,10 +3,16 @@
 <style>
     #icon-text-columns-{{ section.id }}{
         background: {{ section.settings.bg_color }};
+        padding: 45px 0 46px;
+    }
+    @media (min-width: 750px){
+        #icon-text-columns-{{ section.id }}{
+            padding: 59px 0 53px;
+        }
     }
 </style>
 
-<section id="icon-text-columns-{{ section.id }}">
+<section id="icon-text-columns-{{ section.id }}" class="section">
     <div class="page-width">
         {% if section.settings.title != blank %}
             <h2 class="center">{{ section.settings.title }}</h2>
