@@ -11,7 +11,7 @@
     align-items: center;
 }
 .icon-text-columns .columns .column img{
-    height: 55px;
+    height: 44px;
     width: max-content
 }
 .icon-text-columns .columns .column p{
@@ -24,6 +24,9 @@
     color: #000;
 }
 @media (min-width: 750px){
+    .icon-text-columns .columns .column img{
+        height: 55px;
+    }
     .icon-text-columns .columns{
         flex-direction: row;
         align-items: start;
