@@ -67,7 +67,7 @@
       "settings": {
         "bg_image": "shopify://shop_images/vacay.png",
         "image_height_desktop": 76,
-        "image_height_mobile": 25,
+        "image_height_mobile": 31,
         "image_width": 75,
         "title": "Vacay This Way",
         "description": "<p>Everything you need for your summer get away!</p>",
