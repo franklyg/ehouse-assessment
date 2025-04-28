@@ -65,37 +65,35 @@
       "type": "image-and-text",
       "name": "Image and Text",
       "settings": {
+        "bg_image": "shopify://shop_images/vacay.png",
         "image_height_desktop": 50,
-        "image_height_mobile": 50,
-        "image_width": 50,
-        "title": "",
-        "description": "",
-        "button_text": "",
-        "button_link": "",
+        "image_height_mobile": 25,
+        "image_width": 75,
+        "title": "Vacay This Way",
+        "description": "<p>Everything you need for your summer get away!</p>",
+        "button_text": "SHOP SUMMER ESSENTIALS",
+        "button_link": "shopify://collections",
         "button_style": "primary"
       }
+    },
+    "image_text_columns_HQrixj": {
+      "type": "image-text-columns",
+      "name": "Image and Text Columns",
+      "settings": {}
     },
     "icon_text_columns_xf3r9Q": {
       "type": "icon-text-columns",
       "name": "Icon Text Columns",
       "settings": {
         "title": "",
-        "bg_color": ""
-      }
-    },
-    "icon_text_columns_hXnXqj": {
-      "type": "icon-text-columns",
-      "name": "Icon Text Columns",
-      "settings": {
-        "title": "",
-        "bg_color": ""
+        "bg_color": "radial-gradient(rgba(137, 143, 239, 1), rgba(120, 196, 245, 1) 100%)"
       }
     }
   },
   "order": [
     "hero_emJJEw",
     "image_and_text_pbHMHF",
-    "icon_text_columns_xf3r9Q",
-    "icon_text_columns_hXnXqj"
+    "image_text_columns_HQrixj",
+    "icon_text_columns_xf3r9Q"
   ]
 }
