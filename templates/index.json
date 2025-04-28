@@ -176,21 +176,21 @@
           "type": "column",
           "settings": {
             "icon": "shopify://shop_images/shipping-icon.png",
-            "description": ""
+            "description": "FREE SHIPPING ON ALL ORDERS"
           }
         },
         "column_tLC4UU": {
           "type": "column",
           "settings": {
             "icon": "shopify://shop_images/returns-icon.png",
-            "description": ""
+            "description": "FREE RETURNS ON ALL ORDERS"
           }
         },
         "column_ftpJix": {
           "type": "column",
           "settings": {
             "icon": "shopify://shop_images/checkout-icon.png",
-            "description": ""
+            "description": "SAFE & SECURE CHECKOUT"
           }
         }
       },
@@ -202,7 +202,7 @@
       "name": "Icon Text Columns",
       "settings": {
         "title": "",
-        "bg_color": "radial-gradient(rgba(137, 143, 239, 1), rgba(120, 196, 245, 1) 100%)"
+        "bg_color": "linear-gradient(0deg, rgba(250, 251, 251, 1) 3%, rgba(247, 248, 248, 1) 100%)"
       }
     }
   },
