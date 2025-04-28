@@ -78,11 +78,127 @@
     },
     "image_text_columns_HQrixj": {
       "type": "image-text-columns",
+      "blocks": {
+        "column_WNif4P": {
+          "type": "column",
+          "name": "Column",
+          "settings": {
+            "image": "shopify://shop_images/column_one.png"
+          },
+          "blocks": {
+            "title_GpebCe": {
+              "type": "_title",
+              "name": "Title",
+              "settings": {
+                "title": "NEW ARRIVALS"
+              },
+              "blocks": {}
+            },
+            "description_FpRqFc": {
+              "type": "_description",
+              "name": "Description",
+              "settings": {
+                "description": "<p>Our latest Summer styles. Fresh. Fun. Fabulous.</p>"
+              },
+              "blocks": {}
+            },
+            "collection_list_kRzGzm": {
+              "type": "_collection-list",
+              "name": "Collection List",
+              "settings": {
+                "collections": [
+                  "women",
+                  "men",
+                  "kids",
+                  "home"
+                ]
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "title_GpebCe",
+            "description_FpRqFc",
+            "collection_list_kRzGzm"
+          ]
+        },
+        "column_jNrmPg": {
+          "type": "column",
+          "name": "Column",
+          "settings": {
+            "image": "shopify://shop_images/column_two.png"
+          },
+          "blocks": {
+            "title_LCDjxn": {
+              "type": "_title",
+              "name": "Title",
+              "settings": {
+                "title": "COLLEGE BOUND"
+              },
+              "blocks": {}
+            },
+            "description_p3wAeQ": {
+              "type": "_description",
+              "name": "Description",
+              "settings": {
+                "description": "<p>New places and new faces. Same great style.</p>"
+              },
+              "blocks": {}
+            },
+            "text_button_KGRinP": {
+              "type": "_text-button",
+              "name": "Text Button",
+              "settings": {
+                "button_text": "SHOP DORM DECOR",
+                "button_link": "shopify://collections"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "title_LCDjxn",
+            "description_p3wAeQ",
+            "text_button_KGRinP"
+          ]
+        }
+      },
+      "block_order": [
+        "column_WNif4P",
+        "column_jNrmPg"
+      ],
       "name": "Image and Text Columns",
       "settings": {}
     },
     "icon_text_columns_xf3r9Q": {
       "type": "icon-text-columns",
+      "blocks": {
+        "column_jVMfzm": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/shipping-icon.png",
+            "description": ""
+          }
+        },
+        "column_tLC4UU": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/returns-icon.png",
+            "description": ""
+          }
+        },
+        "column_ftpJix": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/checkout-icon.png",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_jVMfzm",
+        "column_tLC4UU",
+        "column_ftpJix"
+      ],
       "name": "Icon Text Columns",
       "settings": {
         "title": "",
