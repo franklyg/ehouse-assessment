@@ -20,7 +20,9 @@
         <div class="columns">
             {% for block in section.blocks %}
                 <div class="column">
-                    {{ block.settings.icon | image_url: width: 3000 | image_tag: loading: 'lazy', sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000', alt: block.settings.image.alt, class: 'image' }}
+                    {% if block.settings.icon != blank %}
+                        {{ block.settings.icon | image_url: width: 3000 | image_tag: loading: 'lazy', sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000', alt: block.settings.image.alt, class: 'image' }}
+                    {% endif %}
                     {% if block.settings.description != blank %}
                         <p class="center">{{ block.settings.description }}</p>
                     {% endif %}
